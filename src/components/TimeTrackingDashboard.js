@@ -8,6 +8,7 @@ import {
     Hstack,
     Icontimecard,
     Namecard,
+    Namecardesc,
     Profpic,
     Styledtimetrackdash,
     Threedot,
@@ -43,13 +44,16 @@ export const TimeTrackingDashboard = () => {
                 <Vstack>
                     <Namecard>
                         <Profpic src={profpic} alt='profpic'/>
-                        <p className='reportfor_timetrack'>
-                            Report for
-                        </p>
-                        <p className='name_timetrack'>
-                            Jeremy Robson
-                        </p>
+                        <Vstack>
+                            <p className='reportfor_timetrack'>
+                                Report for
+                            </p>
+                            <p className='name_timetrack'>
+                                Jeremy Robson
+                            </p>
+                        </Vstack>
                     </Namecard>
+                    <Namecardesc>
                     {termFrame.timeFrames.map((timeFrame,index)=>
                         <Vstackflexi>
                             <p className={toggleActiveStyles(index)}
@@ -62,6 +66,7 @@ export const TimeTrackingDashboard = () => {
                             </p>
                         </Vstackflexi>
                     )}
+                    </Namecardesc>
                 </Vstack>
             </BGnamecard>
             {Datas.map((data)=>{

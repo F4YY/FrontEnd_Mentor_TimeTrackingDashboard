@@ -54,6 +54,7 @@ export const Styledtimetrackdash = styled.div`
 `
 export const BGnamecard = styled.div`
     display: flex;
+    flex-direction: row;
     grid-area:A;
     font-size:1em;
     width:auto;
@@ -70,8 +71,18 @@ export const BGnamecard = styled.div`
             margin:0 0 10px 30px;
         }
     }
+    @media screen and (max-width:600px) {
+        margin:0 20px;
+        p{
+            margin:10px 30px;
+        }
+    }
 `
-export const Namecard = styled(Vstack)`
+export const Namecardesc = styled(Vstackflexi)`
+    width:100%;
+    height:auto;
+`
+export const Namecard = styled(Vstackflexi)`
     color:#fff;
     background-color: var(--Blue);
     border-radius: 12px;
@@ -105,6 +116,21 @@ export const Namecard = styled(Vstack)`
             margin:0;
         }
     }
+    @media screen and (max-width:600px) {
+        width:auto;
+        height:auto;
+        padding:0;
+        .reportfor_timetrack{
+            text-align: left;
+            padding:0;
+            margin:0;
+        }
+        .name_timetrack{
+            font-size:1.7em;
+            padding:0;
+            margin:0 30px 0 0;
+        }
+    }
 `
 export const Profpic = styled.img`
     width:40%;
@@ -112,6 +138,10 @@ export const Profpic = styled.img`
     border-radius:50%;
     border:2px solid #fff;
     @media screen and (max-width:1025px) {
+        margin:30px 5%;
+    }
+    @media screen and (max-width:600px) {
+        width:20%;
         margin:30px 5%;
     }
 `
@@ -129,6 +159,7 @@ export const BGtimecard = styled.div`
     @media screen and (max-width:600px) {
         width:auto;
         height:auto;
+        margin:0 20px;
     }
 `
 export const Icontimecard = styled.img`
@@ -138,6 +169,8 @@ export const Icontimecard = styled.img`
     object-fit:contain;
     object-position: 0 -10px;
     margin: 0 0 0 62%;
+    position:relative;
+    z-index:0;
 `
 export const TimeCard = styled(Vstack)`
     width:auto;
@@ -148,6 +181,8 @@ export const TimeCard = styled(Vstack)`
     background-repeat: no-repeat;
     padding:12%;
     margin:-10% 0 0 0;
+    position:relative;
+    z-index:1;
     :hover{
         cursor: pointer;
         background-color: hsla(235, 46%, 20%, 0.9);
@@ -162,7 +197,7 @@ export const TimeCard = styled(Vstack)`
         width:auto;
         height:auto;
         padding:5%;
-        margin:-15% 0 0 0;
+        margin:-10% 0 0 0;
     }
 `
 export const Threedot = styled.img`
